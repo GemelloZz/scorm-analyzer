@@ -1,0 +1,273 @@
+/* ==============================
+   SCORM ANALYZER
+   Stile generale
+   ============================== */
+
+* {
+  box-sizing: border-box;
+}
+img {
+  height: 100px;
+  width: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+body {
+  margin: 0;
+  padding: 40px 24px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #263445;
+  background: #f2f4f7;
+}
+
+/* Titolo principale */
+
+body > h2:first-of-type {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+  padding: 25px 30px;
+  color: #ffffff;
+  background: linear-gradient(120deg, #263746, #3d5267);
+  border-left: 6px solid #f58220;
+  border-radius: 12px;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 5px 18px rgba(31, 45, 61, 0.12);
+}
+
+/* Titolo del corso */
+
+#projectTitle {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 16px 20px;
+  color: #34495e;
+  background: #ffffff;
+  border: 1px solid #e1e6ec;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Titolo della sezione file */
+
+body > h3 {
+  max-width: 1000px;
+  margin: 28px auto 12px;
+  color: #34495e;
+  font-size: 19px;
+}
+
+/* Area di selezione SCORM */
+
+#fileInput {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  color: #566575;
+  background: #ffffff;
+  border: 2px dashed #f0ad72;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+#fileInput:hover {
+  background: #fffaf5;
+  border-color: #f58220;
+}
+
+#fileInput::file-selector-button {
+  margin-right: 14px;
+  padding: 11px 18px;
+  color: #ffffff;
+  background: #f58220;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#fileInput::file-selector-button:hover {
+  background: #dc6c12;
+}
+
+/* Contenitori dei risultati */
+
+#fileList,
+#analysisResults,
+#jsOutput {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  padding: 24px 28px;
+  background: #ffffff;
+  border: 1px solid #e2e7ed;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(31, 45, 61, 0.04);
+}
+
+/* Titoli interni */
+
+#fileList h3,
+#analysisResults h2,
+#analysisResults h3,
+#jsOutput h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #2d4053;
+}
+
+#analysisResults h2 {
+  padding-bottom: 14px;
+  border-bottom: 3px solid #f58220;
+  font-size: 24px;
+}
+
+#analysisResults h3 {
+  margin-top: 28px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8edf2;
+  font-size: 19px;
+}
+
+/* Liste dei file e dei risultati */
+
+#fileList ul,
+#analysisResults ul,
+#analysisResults ol {
+  padding-left: 25px;
+}
+
+#fileList li,
+#analysisResults li {
+  margin-bottom: 9px;
+  padding: 9px 12px;
+  color: #4c5b6a;
+  background: #f7f9fb;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+/* Evidenziazione al passaggio del mouse */
+
+#fileList li:hover,
+#analysisResults li:hover {
+  background: #fff2e7;
+}
+
+/* Paragrafi dei risultati */
+
+#analysisResults p {
+  margin: 12px 0;
+  color: #526170;
+}
+
+/* Totali principali */
+
+#analysisResults > h3:last-child {
+  margin-top: 30px;
+  padding: 20px;
+  color: #ffffff;
+  background: #263746;
+  border: none;
+  border-left: 5px solid #f58220;
+  border-radius: 8px;
+  font-size: 21px;
+  overflow-wrap: anywhere;
+}
+
+/* Eventuali errori */
+
+#analysisResults p[style*="color"] {
+  padding: 12px 15px;
+  background: #fff0f0;
+  border-left: 4px solid #c62828;
+  border-radius: 5px;
+}
+
+/* Compatibilità con schermi piccoli */
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  body > h2:first-of-type {
+    padding: 20px;
+    font-size: 23px;
+  }
+
+  #fileList,
+  #analysisResults,
+  #jsOutput {
+    padding: 18px 15px;
+  }
+
+  #fileInput {
+    padding: 16px;
+  }
+
+  #analysisResults h2 {
+    font-size: 21px;
+  }
+}
+
+/* Elenco file SCORM apribile e richiudibile */
+
+#fileList {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+}
+
+.files-dropdown {
+  background: #ffffff;
+  border: 1px solid #e2e7ed;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(31, 45, 61, 0.04);
+  overflow: hidden;
+}
+
+.files-dropdown summary {
+  padding: 18px 22px;
+  color: #ffffff;
+  background: #263746;
+  border-left: 5px solid #f58220;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.files-dropdown summary:hover {
+  background: #344b60;
+}
+
+.files-dropdown[open] summary {
+  border-bottom: 1px solid #e2e7ed;
+}
+
+.files-list {
+  max-height: 350px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 15px 22px 15px 45px;
+  background: #ffffff;
+}
+
+.files-list li {
+  padding: 7px 5px;
+  color: #526170;
+  border-bottom: 1px solid #edf0f3;
+  overflow-wrap: anywhere;
+}
+
+.files-list li:last-child {
+  border-bottom: none;
+}
